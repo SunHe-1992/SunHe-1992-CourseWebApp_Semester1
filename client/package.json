@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "concurrently": "^8.2.2",
+    "express-jwt": "^8.4.1",
     "global": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -26,5 +27,5 @@
     "nodemon": "^3.0.3",
     "vite": "^5.0.8"
   },
-   "dev": "concurrently 'vite' 'nodemon server.js'"
+  "dev": "concurrently 'vite' 'nodemon server.js'"
 }
