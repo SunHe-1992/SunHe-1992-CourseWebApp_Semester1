@@ -34,5 +34,6 @@
     "mongoose": "^8.1.1",
     "yarn": "^1.22.21"
   },
-  "description": ""
+  "description": "",
+  "repository": "https://github.com/SunHe-1992/SunHe-1992-CourseWebApp_Semester1.git"
 }
