@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
-  "author": "Blessing",
+  "author": "SunHe",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.22.20",
