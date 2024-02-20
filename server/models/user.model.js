@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 //const mongoose = require('mongoose');
-import crypto from 'crypto'
+// import crypto from 'crypto'
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -31,9 +31,9 @@ const UserSchema = new mongoose.Schema({
 UserSchema.virtual('password')
   .set(function (password) {
     this._password = password;
-    this.salt = this.makeSalt();
-    // this.hashed_password = password;
-    this.hashed_password = this.encryptPassword(password);
+    // this.salt = this.makeSalt();
+    this.hashed_password = password;
+    // this.hashed_password = this.encryptPassword(password);
   })
   .get(function () {
     return this._password;

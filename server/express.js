@@ -6,17 +6,19 @@ import cors from 'cors'
 import helmet from 'helmet'
 import Template from './../template.js'
 import userRoutes from './routes/user.routes.js'
-import authRoutes from './routes/auth.routes.js'
+import productRoutes from './routes/product.routes.js'
+// import authRoutes from './routes/auth.routes.js'
 const app = express()
 //...
-app.get('/', (req, res) => {
-    res.status(200).send(Template())
-})
+// app.get('/', (req, res) => {
+//     res.status(200).send(Template())
+// })
 //...
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', userRoutes)
-app.use('/', authRoutes)
+app.use('/product', productRoutes)
+// app.use('/', authRoutes)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
@@ -31,5 +33,8 @@ app.use((err, req, res, next) => {
         console.log(err)
     }
 })
-
+app.get('/', (req, res) => {
+    console.log(req.query)
+  })
+  
 export default app
