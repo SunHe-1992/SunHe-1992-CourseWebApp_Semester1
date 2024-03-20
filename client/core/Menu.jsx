@@ -10,6 +10,12 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 const isActive = (location, path) => {
     return location.pathname === path ? { color: '#ff4081' } : { color: '#ffffff' };
 };
+const isPartActive = (location, path) => {
+    if (location.pathname.includes(path))
+        return { color: '#bef67a' }
+    else
+        return { color: '#ffffff' }
+}
 export default function Menu() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,6 +47,7 @@ export default function Menu() {
                 }
                 {
                     auth.isAuthenticated() && (<span>
+                        {auth.isAuthenticated().user && auth.isAuthenticated().user.seller && (<Link to="/seller/shops"><Button style={isPartActive(location, "/seller/")}>My Shops</Button></Link>)}
                         <Link to={"/user/" + auth.isAuthenticated().user._id}>
                             <Button style={isActive(location, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
                         </Link>

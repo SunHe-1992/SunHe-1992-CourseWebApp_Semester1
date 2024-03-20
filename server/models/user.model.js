@@ -26,7 +26,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: 'Password is required'
   },
-  salt: String
+  salt: String,
+  seller: {
+    type: Boolean,
+    default: false
+  }
 });
 UserSchema.virtual('password')
   .set(function (password) {
